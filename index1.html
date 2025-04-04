@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendations</title>
+    <link rel="stylesheet" href="static/style1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎬 Movie Recommendation System 🎥</h1>
+        
+        <form method="post">
+            <label for="movie_name">Enter a Movie Name:</label>
+            <input type="text" id="movie_name" name="movie_name" placeholder="e.g. Inception" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        <div class="recommendations">
+            {% if recommendations %}
+                <h2>✨ Recommended Movies ✨</h2>
+                <ul>
+                    {% for movie in recommendations %}
+                        <li>{{ movie }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
